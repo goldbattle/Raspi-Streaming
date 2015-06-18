@@ -1,7 +1,8 @@
 # Don't track log files
-./logs/*
-!./logs/.gitkeep
+/logs/*.log
+!/logs/.gitkeep
 
 # Ignore the ffpmeg compile folder
-./ffmpeg/*
-!./ffmpeg/.gitkeep
+/ffmpeg/*
+/ffmpeg/.git
+!/ffmpeg/.gitkeep
