@@ -21,14 +21,14 @@ SCRIPT_NAME=${0##*/}
 
 # Find stream key
 if [ -f ~/twitch-stream.config ]; then
-  echo "[Config] - Using global configuration" 2>&1 | tee -a $LOG_FILE_CORE
+  echo "[Config] - Using global stream configuration" 2>&1 | tee -a $LOG_FILE_CORE
   . ~/twitch-stream.config
 else
   if [ -f ./configs/twitch-stream.config ]; then
-    echo "[Config] - Using local configuration" 2>&1 | tee -a $LOG_FILE_CORE
+    echo "[Config] - Using local stream configuration" 2>&1 | tee -a $LOG_FILE_CORE
     . ./configs/twitch-stream.config
   else
-    echo "[Config] - Could not locate ~/.config or config" 2>&1 | tee -a $LOG_FILE_CORE
+    echo "[Config] - Could not locate twitch-stream.config" 2>&1 | tee -a $LOG_FILE_CORE
     exit 1
   fi
 fi
@@ -42,7 +42,7 @@ else
     echo "[Config] - Using local twitch key" 2>&1 | tee -a $LOG_FILE_CORE
     . ./configs/twitch-key.config
   else
-    echo "[Config] - Could not locate ~/.twitch_key or twitch_key" 2>&1 | tee -a $LOG_FILE_CORE
+    echo "[Config] - Could not locate twitch-key.config" 2>&1 | tee -a $LOG_FILE_CORE
     exit 1
   fi
 fi
